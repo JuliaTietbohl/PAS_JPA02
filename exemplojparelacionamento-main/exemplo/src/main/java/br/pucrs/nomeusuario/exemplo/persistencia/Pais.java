@@ -8,9 +8,11 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 public class Pais {
+    @Id
     private long codigo;
     private String nome;
     private String sigla;
+    
     @OneToMany(mappedBy = "pais", cascade = CascadeType.REFRESH)
     private List<Livro> livros;
 

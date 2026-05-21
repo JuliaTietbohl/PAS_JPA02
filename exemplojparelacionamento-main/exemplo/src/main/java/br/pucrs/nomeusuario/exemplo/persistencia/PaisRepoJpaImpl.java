@@ -37,5 +37,14 @@ public class PaisRepoJpaImpl implements IPaisRepository {
         return pais;    
     }
     
+    @Override
+    public Boolean addPais(Pais pais) {
+        try {
+            repository.save(pais);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
 }

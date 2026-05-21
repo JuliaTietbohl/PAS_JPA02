@@ -8,7 +8,6 @@ public interface IPaisJpaItlfRep extends CrudRepository<Pais,Long>{
     List<Pais> findAll();
     Pais findByCodigo(long codigo);
     Pais findBySigla(String sigla);
-    //post?
 }
 
 /*retornar todos os países cadastrados

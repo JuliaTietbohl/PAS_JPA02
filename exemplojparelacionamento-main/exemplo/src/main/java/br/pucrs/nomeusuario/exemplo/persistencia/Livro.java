@@ -10,13 +10,18 @@ import jakarta.persistence.*;
 public class Livro {
     @Id
     private long id;
+
     @ManyToOne(cascade = CascadeType.REFRESH)
     private Editora editora;
+
     private String titulo;
     
     @ManyToOne(cascade = CascadeType.REFRESH)
     private Autor autor;
+
     private int ano;
+    
+    @ManyToOne(cascade = CascadeType.REFRESH)
     private Pais pais;
 
     public Livro() {        

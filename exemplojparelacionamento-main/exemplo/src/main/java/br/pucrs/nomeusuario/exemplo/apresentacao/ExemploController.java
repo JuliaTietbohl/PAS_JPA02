@@ -11,12 +11,14 @@ public class ExemploController {
     private IAcervoRepository acervo;
     private IEditoraRepository editoras;
     private IAutorRepository autores;
+    private IPaisRepository paises;
 
     @Autowired
-    public ExemploController(IAcervoRepository acervo, IEditoraRepository editoras, IAutorRepository autores) {
+    public ExemploController(IAcervoRepository acervo, IEditoraRepository editoras, IAutorRepository autores, IPaisRepository paises) {
         this.acervo = acervo;        
         this.editoras = editoras;
         this.autores = autores;
+        this.paises = paises;
     }
 
     @GetMapping("")
@@ -66,17 +68,22 @@ public class ExemploController {
 
     @GetMapping("/paises")
     public List<Pais> getPaises() {
-        return acervo.getPaises();
+        return paises.getPaises();
     }
 
     @GetMapping("/paisCod/{codigo}")
-    public List<Pais> getPaisCodigo(@PathVariable("codigo") long codigo) {
-        return acervo.getPaisCodigo(codigo);
+    public Pais getPaisCodigo(@PathVariable("codigo") long codigo) {
+        return paises.getPaisCodigo(codigo);
     }
 
     @GetMapping("/paisSigla/{sigla}")
-    public List<Pais> getPaisSigla(@PathVariable("sigla") String sigla) {
-        return acervo.getPaisSigla(sigla);
+    public Pais getPaisSigla(@PathVariable("sigla") String sigla) {
+        return paises.getPaisSigla(sigla);
     }
-    
+
+    @PostMapping("/pais")
+    public Boolean addPais(@RequestBody Pais pais) {
+        return paises.addPais(pais);
+    }
+
 }
