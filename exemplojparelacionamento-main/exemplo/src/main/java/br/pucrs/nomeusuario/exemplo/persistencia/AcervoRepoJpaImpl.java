@@ -54,4 +54,29 @@ public class AcervoRepoJpaImpl implements IAcervoRepository {
         return autores;
         }
 
+    @Override
+    public List<Pais> getPaises() {
+        List<Pais> paises = repository.findAllPaises();
+        if (paises.size() == 0) 
+            paises = new LinkedList<Pais>();
+        return paises;
+    }
+
+    @Override
+    public List<Pais> getPaisCodigo(long codigo) {
+        List<Pais> pais = repository.findByCodigo(codigo);
+        if (pais.size() == 0)
+            pais = new LinkedList<Pais>();
+        return pais;
+    }
+
+    @Override
+    public List<Pais> getPaisSigla(String sigla) {
+        List<Pais> pais = repository.findBySigla(sigla);
+        if (pais.size() == 0)
+            pais = new LinkedList<Pais>();
+        return pais;
+    }
+    
+
 }

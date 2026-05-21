@@ -1,11 +1,11 @@
 INSERT INTO editora (codigo,nome) VALUES (210,'Artmed');
 INSERT INTO editora (codigo,nome) VALUES (220,'John Wiley and Sons');
 INSERT INTO editora (codigo,nome) VALUES (230,'Bookman');
-INSERT INTO livro (id,editora_codigo,titulo,autor,ano) VALUES (110,210,'Aprendendo Java', 'Maria da Silva', 2015);
-INSERT INTO livro (id,editora_codigo,titulo,autor,ano) VALUES (120,220,'Spring-Boot', 'Jose de Souza', 2020);
-INSERT INTO livro (id,editora_codigo,titulo,autor,ano) VALUES (130,230,'Principios SOLID', 'Pedro da Silva', 2023);
-INSERT INTO livro (id,editora_codigo,titulo,autor,ano) VALUES (140,230,'Padroes de Projeto', 'Joana Moura', 2023);
-INSERT INTO livro (id,editora_codigo,titulo,autor,ano) VALUES (150,210,'Teste Unitario', 'Pedro da Silva', 2024);
+INSERT INTO livro (id,editora_codigo,titulo,autor,ano,pais) VALUES (110,210,'Aprendendo Java', 'Maria da Silva', 2015, 'Brasil');
+INSERT INTO livro (id,editora_codigo,titulo,autor,ano,pais) VALUES (120,220,'Spring-Boot', 'Jose de Souza', 2020, 'EUA');
+INSERT INTO livro (id,editora_codigo,titulo,autor,ano,pais) VALUES (130,230,'Principios SOLID', 'Pedro da Silva', 2023, 'Brasil');
+INSERT INTO livro (id,editora_codigo,titulo,autor,ano,pais) VALUES (140,230,'Padroes de Projeto', 'Joana Moura', 2023, 'EUA');
+INSERT INTO livro (id,editora_codigo,titulo,autor,ano,pais) VALUES (150,210,'Teste Unitario', 'Pedro da Silva', 2024, 'Brasil');
 INSERT INTO autor (numero,nome,ano_nascimento) VALUES (1,'Maria da Silva', 1980);
 INSERT INTO autor (numero,nome,ano_nascimento) VALUES (2,'Jose de Souza', 1975);
 INSERT INTO autor (numero,nome,ano_nascimento) VALUES (3,'Pedro da Silva', 1990);

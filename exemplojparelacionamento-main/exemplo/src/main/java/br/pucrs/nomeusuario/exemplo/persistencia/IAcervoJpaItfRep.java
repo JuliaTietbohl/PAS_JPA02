@@ -8,6 +8,9 @@ public interface IAcervoJpaItfRep extends CrudRepository<Livro,Long>{
     List<Livro> findByAutor(String autor);
     List<Autor> findAllAutors();
     List<Autor> findByLivros(Livro livro);
+    List<Pais> findAllPaises();
+    List<Pais> findByCodigo(long codigo);
+    List<Pais> findBySigla(String sigla);
 }
 
 

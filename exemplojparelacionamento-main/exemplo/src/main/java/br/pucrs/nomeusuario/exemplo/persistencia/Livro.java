@@ -15,16 +15,18 @@ public class Livro {
     private String titulo;
     private Autor autor;
     private int ano;
+    private Pais pais;
 
     public Livro() {        
     }
 
-    public Livro(long id, Editora editora, String titulo, Autor autor, int ano) {
+    public Livro(long id, Editora editora, String titulo, Autor autor, int ano, Pais pais) {
         this.id = id;
         this.editora = editora;
         this.titulo = titulo;
         this.autor = autor;
         this.ano = ano;
+        this.pais = pais;
     }
 
     public long getId() {
@@ -47,4 +49,7 @@ public class Livro {
         return ano;
     }
 
+    public Pais getPais() {
+        return pais;
+    }
 }

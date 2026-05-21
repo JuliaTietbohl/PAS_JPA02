@@ -8,4 +8,7 @@ public interface IAcervoRepository {
     List<Livro> getLivrosAutor(String autor);
     List<Autor> getAutores();
     List<Autor> getAutorLivros(Livro livro);
+    List<Pais> getPaises();
+    List<Pais> getPaisCodigo(long codigo);
+    List<Pais> getPaisSigla(String sigla);
 }

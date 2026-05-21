@@ -61,4 +61,20 @@ public class ExemploController {
     public List<Autor> getAutores() {
         return acervo.getAutores();
     }
+
+    @GetMapping("/paises")
+    public List<Pais> getPaises() {
+        return acervo.getPaises();
+    }
+
+    @GetMapping("/paisCod/{codigo}")
+    public List<Pais> getPaisCodigo(@PathVariable("codigo") long codigo) {
+        return acervo.getPaisCodigo(codigo);
+    }
+
+    @GetMapping("/paisSigla/{sigla}")
+    public List<Pais> getPaisSigla(@PathVariable("sigla") String sigla) {
+        return acervo.getPaisSigla(sigla);
+    }
+    
 }
