@@ -9,16 +9,18 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Primary
 public class AcervoRepoJpaImpl implements IAcervoRepository {
-    private IAcervoJpaItfRep repository;
+    private IAcervoJpaItfRep acervoRepository;
+    private IAutorJpaItfRep autorRepository;
 
     @Autowired
-    public AcervoRepoJpaImpl(IAcervoJpaItfRep repository) {
-        this.repository = repository;
+    public AcervoRepoJpaImpl(IAcervoJpaItfRep acervoRepository, IAutorJpaItfRep autorRepository) {
+        this.acervoRepository = acervoRepository;
+        this.autorRepository = autorRepository;
     }
 
     @Override
     public List<Livro> getLivros() {
-        List<Livro> livros = repository.findAll();
+        List<Livro> livros = acervoRepository.findAll();
         if (livros.size() == 0) 
             livros = new LinkedList<Livro>();
         return livros;
@@ -26,13 +28,13 @@ public class AcervoRepoJpaImpl implements IAcervoRepository {
 
     @Override
     public Livro getLivroId(long id) {
-        Livro livro = repository.findById(id);
+        Livro livro = acervoRepository.findById(id);
         return livro;
     }
 
     @Override
     public List<Livro> getLivrosAutor(String autor) {
-        List<Livro> livros = repository.findByAutor(autor);
+        List<Livro> livros = acervoRepository.findByAutorNome(autor);
         if (livros.size() == 0) 
             livros = new LinkedList<Livro>();
         return livros;
@@ -40,7 +42,7 @@ public class AcervoRepoJpaImpl implements IAcervoRepository {
 
     @Override
     public List<Autor> getAutorLivros(Livro livro) {
-        List<Autor> autor = repository.findByLivros(livro);
+        List<Autor> autor = autorRepository.findByLivros(livro);
         if (autor.size() == 0)
             autor = new LinkedList<Autor>();
         return autor;
@@ -48,7 +50,7 @@ public class AcervoRepoJpaImpl implements IAcervoRepository {
 
     @Override
     public List<Autor> getAutores() {
-        List<Autor> autores = repository.findAllAutors();
+        List<Autor> autores = autorRepository.findAll();
         if (autores.size() == 0) 
             autores = new LinkedList<Autor>();
         return autores;

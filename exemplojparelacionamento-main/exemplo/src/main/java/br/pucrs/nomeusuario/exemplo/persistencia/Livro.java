@@ -13,6 +13,8 @@ public class Livro {
     @ManyToOne(cascade = CascadeType.REFRESH)
     private Editora editora;
     private String titulo;
+    
+    @ManyToOne(cascade = CascadeType.REFRESH)
     private Autor autor;
     private int ano;
 
