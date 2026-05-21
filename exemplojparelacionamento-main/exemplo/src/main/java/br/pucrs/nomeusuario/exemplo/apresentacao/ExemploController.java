@@ -52,4 +52,13 @@ public class ExemploController {
         return editoras.getEditoraNome(nome);
     }
 
+    @GetMapping("/autor/{numero}")
+    public List<Autor> getAutorLivros(@PathVariable("l") Livro livro) {
+        return acervo.getAutorLivros(livro);
+    }
+
+    @GetMapping("/todosautores")
+    public List<Autor> getAutores() {
+        return acervo.getAutores();
+    }
 }

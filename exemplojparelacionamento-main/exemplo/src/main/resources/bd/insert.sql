@@ -6,3 +6,7 @@ INSERT INTO livro (id,editora_codigo,titulo,autor,ano) VALUES (120,220,'Spring-B
 INSERT INTO livro (id,editora_codigo,titulo,autor,ano) VALUES (130,230,'Principios SOLID', 'Pedro da Silva', 2023);
 INSERT INTO livro (id,editora_codigo,titulo,autor,ano) VALUES (140,230,'Padroes de Projeto', 'Joana Moura', 2023);
 INSERT INTO livro (id,editora_codigo,titulo,autor,ano) VALUES (150,210,'Teste Unitario', 'Pedro da Silva', 2024);
+INSERT INTO autor (numero,nome,ano_nascimento) VALUES (1,'Maria da Silva', 1980);
+INSERT INTO autor (numero,nome,ano_nascimento) VALUES (2,'Jose de Souza', 1975);
+INSERT INTO autor (numero,nome,ano_nascimento) VALUES (3,'Pedro da Silva', 1990);
+INSERT INTO autor (numero,nome,ano_nascimento) VALUES (4,'Joana Moura', 1985);

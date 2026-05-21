@@ -37,5 +37,21 @@ public class AcervoRepoJpaImpl implements IAcervoRepository {
             livros = new LinkedList<Livro>();
         return livros;
     }
-    
+
+    @Override
+    public List<Autor> getAutorLivros(Livro livro) {
+        List<Autor> autor = repository.findByLivros(livro);
+        if (autor.size() == 0)
+            autor = new LinkedList<Autor>();
+        return autor;
+    }
+
+    @Override
+    public List<Autor> getAutores() {
+        List<Autor> autores = repository.findAllAutors();
+        if (autores.size() == 0) 
+            autores = new LinkedList<Autor>();
+        return autores;
+        }
+
 }
