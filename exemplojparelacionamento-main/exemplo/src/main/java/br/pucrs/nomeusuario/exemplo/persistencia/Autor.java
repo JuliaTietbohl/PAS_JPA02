@@ -8,17 +8,17 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "numero")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "numero")
 public class Autor {
     @Id
     private long numero;
-    @OneToMany(mappedBy = "autor")
     private String nome;
     private int anoNascimento;
+
+    @OneToMany(mappedBy = "autor")
     private List<Livro> livros;
-    private List<Autor> autores;
-    
-     public Autor() {        
+
+    public Autor() {
     }
 
     public List<Livro> getLivros() {
@@ -35,9 +35,5 @@ public class Autor {
 
     public int getAnoNascimento() {
         return anoNascimento;
-    }
-
-    public List<Autor> getAutores() {
-        return autores;
     }
 }
